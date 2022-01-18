@@ -1,0 +1,202 @@
+create table instructor(id int(20),name varchar(25),dept_name varchar(20),salary int(10));
+
+
+create table course(course_id varchar(25),title varchar(30),dept_name varchar(20),credits int(10));
+
+create table department(dept_name varchar(20),building varchar(20),budget int(30));
+
+
+create table teaches(id int(20),course_id varchar(20),sec_id int(20),semester varchar(25),year int(20));
+
+
+
+insert into teaches(id,course_id,sec_id,semester,year)
+    values(10101,'cs_101','1','fall',2009),
+    (10101,'cs_315','1','spring',2010),
+    (10101,'cs_347','1','fall',2009),
+    (12121,'fin_201','1','spring',2010),
+    (15151,'mu_199','1','spring',2010),
+    (22222,'phy_101','1','fall',2009),
+    (32343,'his_351','1','spring',2010),
+    (45565,'cs_319','1','spring',2010),
+    (45565,'cs_101','1','spring',2010),
+    (76766,'bio_101','1','summer',2009),
+    (76766,'bio_301','1','summer',2010),
+    (83821,'cs_190','1','spring',2009),
+    (83821,'cs_190','2','spring',2010),
+    (83821,'cs_319','2','spring',2010),
+    (98345,'ee_181','1','spring',2009);
+
+
++-------+-----------+--------+----------+------+
+| id    | course_id | sec_id | semester | year |
++-------+-----------+--------+----------+------+
+| 10101 | cs_101    |      1 | fall     | 2009 |
+| 10101 | cs_315    |      1 | spring   | 2010 |
+| 10101 | cs_347    |      1 | fall     | 2009 |
+| 12121 | fin_201   |      1 | spring   | 2010 |
+| 15151 | mu_199    |      1 | spring   | 2010 |
+| 22222 | phy_101   |      1 | fall     | 2009 |
+| 32343 | his_351   |      1 | spring   | 2010 |
+| 45565 | cs_319    |      1 | spring   | 2010 |
+| 45565 | cs_101    |      1 | spring   | 2010 |
+| 76766 | bio_101   |      1 | summer   | 2009 |
+| 76766 | bio_301   |      1 | summer   | 2010 |
+| 83821 | cs_190    |      1 | spring   | 2009 |
+| 83821 | cs_190    |      2 | spring   | 2010 |
+| 83821 | cs_319    |      2 | spring   | 2010 |
+| 98345 | ee_181    |      1 | spring   | 2009 |
++-------+-----------+--------+----------+------+
+
+
+
+insert into instructor 
+     values(10101,'sreenivasan','cs',65000),
+     (12121,'wu','finance',90000),
+     (15151,'mozart','music',40000),
+     (22222,'einstein','physics',95000),
+     (32343,'alsaid','history',60000),
+     (33456,'gold','physics',87000),
+     (45565,'catz','cs',75000),
+     (58583,'califier','history',62000),
+     (76453,'singh','finance',80000),
+     (76766,'crick','biology',72000),
+     (83821,'brand','cs',92000),
+     (98345,'king','electricaleng',92000);
+
++-------+-------------+---------------+--------+
+| id    | name        | dept_name     | salary |
++-------+-------------+---------------+--------+
+| 10101 | sreenivasan | cs            |  65000 |
+| 12121 | wu          | finance       |  90000 |
+| 15151 | mozart      | music         |  40000 |
+| 22222 | einstein    | physics       |  95000 |
+| 32343 | alsaid      | history       |  60000 |
+| 33456 | gold        | physics       |  87000 |
+| 45565 | catz        | cs            |  75000 |
+| 58583 | califier    | history       |  62000 |
+| 76453 | singh       | finance       |  80000 |
+| 76766 | crick       | biology       |  72000 |
+| 83821 | brand       | cs            |  92000 |
+| 98345 | king        | electricaleng |  92000 |
++-------+-------------+---------------+--------+
+
+insert into department(dept_name,building,budget)
+	values('biology','Watson',90000),
+	('cs','Taylor',100000),
+	('EE','Taylor',85000),
+	('finance','Painter',120000),
+	('history','Painter',50000),
+	('music','Packard',80000),
+	('physics','Watson',70000);
+
+
++-----------+----------+--------+
+| dept_name | building | budget |
++-----------+----------+--------+
+| biology   | Watson   |  90000 |
+| cs        | Taylor   | 100000 |
+| EE        | Taylor   |  85000 |
+| finance   | Painter  | 120000 |
+| history   | Painter  |  50000 |
+| music     | Packard  |  80000 |
+| physics   | Watson   |  70000 |
++-----------+----------+--------+
+
+insert into course 
+	values('bio-101','introduction to biology','biology','4'),
+    ('bio-301','genetics','biology','4'),
+    ('bio-399','computational biology','biology','6'),
+    ('bio-399','computational biology','biology','6'),
+    ('cs-315','robotics','compsci','3'),
+    ('cs-319','image processing','compsci','3'),
+    ('cs-347','database system','compsci','3'),
+    ('ee-181','introduction to digitalsystem','elecengg','3'),
+    ('fin-201','investment banking','finance','3'),
+    ('his-351','world history','history','3'),
+    ('mu-199','music video','music','3'),
+    ('thy-101','physical principles','physics','4'),
+    ('cs-101','intro.0 to computer science','compsci','4');
+
++-----------+-------------------------------+-----------+---------+
+| course_id | title                         | dept_name | credits |
++-----------+-------------------------------+-----------+---------+
+| bio-101   | introduction to biology       | biology   |       4 |
+| bio-301   | genetics                      | biology   |       4 |
+| bio-399   | computational biology         | biology   |       6 |
+| bio-399   | computational biology         | biology   |       6 |
+| cs-315    | robotics                      | compsci   |       3 |
+| cs-319    | image processing              | compsci   |       3 |
+| cs-347    | database system               | compsci   |       3 |
+| bio-301   | genetics                      | biology   |       4 |
+| ee-181    | introduction to digitalsystem | elecengg  |       3 |
+| fin-201   | investment banking            | finance   |       3 |
+| his-351   | world history                 | history   |       3 |
+| mu-199    | music video                   | music     |       3 |
+| thy-101   | physical principles           | physics   |       4 |
+| cs-101    | intr to computer science      | compsci   |       4 |
++-----------+-------------------------------+-----------+---------+
+
+
+retrive the information from the table instructor by avoiding the repeated dept_name
+
+select distinct dept_name from instructor;
+
++---------------+
+| dept_name     |
++---------------+
+| cs            |
+| finance       |
+| music         |
+| physics       |
+| history       |
+| biology       |
+| electricaleng |
++---------------+
+
+select all department anme from instructor
+
+select all dept_name from instructor;
+
++---------------+
+| dept_name     |
++---------------+
+| cs            |
+| finance       |
+| music         |
+| physics       |
+| history       |
+| physics       |
+| cs            |
+| history       |
+| finance       |
+| biology       |
+| cs            |
+| electricaleng |
++---------------+
+
+implimentation of arithametic expreshan select id,name,dept_name current salary as salary*100
+
+select id,name,dept_name,salary*100 from instructor;
+
+
++-------+-------------+---------------+------------+
+| id    | name        | dept_name     | salary*100 |
++-------+-------------+---------------+------------+
+| 10101 | sreenivasan | cs            |    6500000 |
+| 12121 | wu          | finance       |    9000000 |
+| 15151 | mozart      | music         |    4000000 |
+| 22222 | einstein    | physics       |    9500000 |
+| 32343 | alsaid      | history       |    6000000 |
+| 33456 | gold        | physics       |    8700000 |
+| 45565 | catz        | cs            |    7500000 |
+| 58583 | califier    | history       |    6200000 |
+| 76453 | singh       | finance       |    8000000 |
+| 76766 | crick       | biology       |    7200000 |
+| 83821 | brand       | cs            |    9200000 |
+| 98345 | king        | electricaleng |    9200000 |
++-------+-------------+---------------+------------+
+
+
+
+
